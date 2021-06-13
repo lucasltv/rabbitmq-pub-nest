@@ -7,6 +7,10 @@ export class AppController {
 
   @Post()
   async getHello(@Body() body: unknown) {
-    return this.amqpConnection.publish('exchange1', 'subscribe-route', body);
+    return this.amqpConnection.publish('amq.fanout', 'subscribe-route', body, {
+      correlationId: 'XPTO',
+      persistent: false,
+      expiration: 5e3,
+    });
   }
 }

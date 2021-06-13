@@ -7,12 +7,12 @@ import { AppController } from './app.controller';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     RabbitMQModule.forRoot(RabbitMQModule, {
-      exchanges: [
-        {
-          name: 'exchange1',
-          type: 'topic',
-        },
-      ],
+      // exchanges: [
+      //   {
+      //     name: 'exchange1',
+      //     type: 'topic',
+      //   },
+      // ],
       uri: process.env.AMQP_URL,
     }),
   ],
