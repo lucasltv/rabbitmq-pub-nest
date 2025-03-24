@@ -9,6 +9,7 @@ export class AppService {
     await this.publisherService.publish(
       'Hello World!',
       RBMQ_EXCHANGES.SERVICE_1,
+      'w1.teste',
     );
     return 'Hello World!';
   }
